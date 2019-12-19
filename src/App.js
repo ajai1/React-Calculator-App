@@ -100,16 +100,22 @@ class App extends Component {
       }
     }
 
-    this.setState({
+    isNaN(newValue) ? alert("Please Enter Number") : this.setState({
       previousValue: this.state.valueToShow,
       operation: "",
       valueToShow: newValue
     });
-  }
+}
 
   clearAction() {
     this.setState({
       valueToShow: this.state.valueToShow.toString().slice(0, -1)
+    });
+  }
+
+  clearAllAction() {
+    this.setState({
+      valueToShow: ""
     });
   }
 
@@ -139,6 +145,10 @@ class App extends Component {
           values={this.state.set4}
           setTheValues={this.buttonHandler}
         ></SetOfButton>
+        <ButtonComponent
+          buttonHandler={this.clearAllAction.bind(this, "Clear")}
+          value="Clear All"
+        ></ButtonComponent>
         <ButtonComponent
           buttonHandler={this.clearAction.bind(this, "Clear")}
           value="Clear"
