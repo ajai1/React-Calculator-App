@@ -4,7 +4,7 @@ class ButtonComponent extends Component {
   render(props) {
     return (
       <button
-        class="btn btn-default btn-lg"
+        className="btn btn-default btn-lg"
         type="submit"
         onClick={this.props.buttonHandler}
       >
